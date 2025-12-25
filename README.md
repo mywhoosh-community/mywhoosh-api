@@ -1579,6 +1579,27 @@ GET /economy/calculations?CurrentLevel=1
 </details>
 
 <details>
+<summary><img src="https://placehold.co/15x15/f93e3e/f93e3e.png" alt="DELETE"/> <b>DELETE</b> /client/custom-workout-upload/{whooshId}/{workoutId} - Delete Custom Workout</summary>
+
+**Base URL:** Coaching API
+
+**Authentication:** Required
+
+**Path Parameters:**
+- `whooshId` (string): User's Whoosh ID
+- `workoutId` (string): Workout ID to delete
+
+**Response:**
+```json
+{
+    "message": "Custom workout is being deleted.",
+    "display": true
+}
+```
+
+</details>
+
+<details>
 <summary><img src="https://placehold.co/15x15/49cc90/49cc90.png" alt="GET"/> <b>GET</b> /client/coach - Get Coach</summary>
 
 **Base URL:** Coaching API
@@ -2244,7 +2265,7 @@ GET /events?zone-offset=KzAxOjAwOjAwLjAwMA==&date=-1&SportsMode=E_Cycling&platfo
 
 **Authentication:** Required
 
-**Request Body:**
+**Request Body (Event):**
 ```json
 {
     "TaskId": "",
@@ -2261,6 +2282,27 @@ GET /events?zone-offset=KzAxOjAwOjAwLjAwMA==&date=-1&SportsMode=E_Cycling&platfo
     "TotalKilometers": 18.9,
     "TotalElevation": 0,
     "TSS": 0,
+    "SportMode": "E_Cycling"
+}
+```
+
+**Request Body (Simple Workout):**
+```json
+{
+    "TaskId": "",
+    "TaskType": "E_Simple_Workout",
+    "TaskStartedTimeEpoc": 1735200000,
+    "TaskTypeId": "workout-id",
+    "CurDayId": "",
+    "TaskState": "E_NotStarted",
+    "DayNo": 0,
+    "TaskEndEpochTime": 1735203000,
+    "MapId": 0,
+    "TaskName": "Interval Power Builder",
+    "TaskDescription": "Intensive interval training with 4 repetitions - perfect for FTP improvement",
+    "TotalKilometers": 0,
+    "TotalElevation": 0,
+    "TSS": 65,
     "SportMode": "E_Cycling"
 }
 ```
