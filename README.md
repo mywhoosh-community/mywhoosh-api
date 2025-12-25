@@ -9,13 +9,6 @@
 
 Unofficial API documentation for MyWhoosh - A comprehensive guide to the MyWhoosh platform's API endpoints and functionality. Create and download workouts, schedule training sessions, customize your character, manage your calendar, calculate XP progression, access game assets, retrieve hidden data, and discover features not visible in the app.
 
-<style>
-.method-get { color: #49cc90; font-weight: bold; }
-.method-post { color: #fca130; font-weight: bold; }
-.method-put { color: #61affe; font-weight: bold; }
-.method-delete { color: #f93e3e; font-weight: bold; }
-</style>
-
 ## Base URLs
 
 MyWhoosh uses multiple service endpoints:
@@ -43,7 +36,7 @@ Get your access token by logging in first (see Authentication section below).
 ## Authentication Endpoints
 
 <details>
-<summary><span class="method-post">POST</span> /http-service/api/login - Login</summary>
+<summary><img src="https://placehold.co/15x15/fca130/fca130.png" alt="POST"/> <b>POST</b> /http-service/api/login - Login</summary>
 
 Authenticate a user and receive access tokens.
 
@@ -81,7 +74,7 @@ Authenticate a user and receive access tokens.
 </details>
 
 <details>
-<summary><span class="method-post">POST</span> /http-service/v1/player/register-user - Register</summary>
+<summary><img src="https://placehold.co/15x15/fca130/fca130.png" alt="POST"/> <b>POST</b> /http-service/v1/player/register-user - Register</summary>
 
 Create a new user account.
 
@@ -134,7 +127,7 @@ Create a new user account.
 ## Game
 
 <details>
-<summary><span class="method-get">GET</span> /game/game-title-data - Get Game Title Data</summary>
+<summary><img src="https://placehold.co/15x15/49cc90/49cc90.png" alt="GET"/> <b>GET</b> /game/game-title-data - Get Game Title Data</summary>
 
 **Base URL:** Main API
 
@@ -215,7 +208,7 @@ Create a new user account.
 </details>
 
 <details>
-<summary><span class="method-get">GET</span> /game/junction-info - Get Junction Info</summary>
+<summary><img src="https://placehold.co/15x15/49cc90/49cc90.png" alt="GET"/> <b>GET</b> /game/junction-info - Get Junction Info</summary>
 
 **Base URL:** Main API
 
@@ -243,7 +236,7 @@ Create a new user account.
 </details>
 
 <details>
-<summary><span class="method-get">GET</span> /game/treasure-hunt - Get Treasure Hunt</summary>
+<summary><img src="https://placehold.co/15x15/49cc90/49cc90.png" alt="GET"/> <b>GET</b> /game/treasure-hunt - Get Treasure Hunt</summary>
 
 **Base URL:** Main API
 
@@ -259,7 +252,7 @@ Create a new user account.
 </details>
 
 <details>
-<summary><span class="method-get">GET</span> /bots/game/ControllableBots - Get Controllable Bots</summary>
+<summary><img src="https://placehold.co/15x15/49cc90/49cc90.png" alt="GET"/> <b>GET</b> /bots/game/ControllableBots - Get Controllable Bots</summary>
 
 **Base URL:** Main API
 
@@ -299,7 +292,7 @@ Create a new user account.
 </details>
 
 <details>
-<summary><span class="method-get">GET</span> /game/challenges - Get Challenges</summary>
+<summary><img src="https://placehold.co/15x15/49cc90/49cc90.png" alt="GET"/> <b>GET</b> /game/challenges - Get Challenges</summary>
 
 **Base URL:** Main API
 
@@ -374,7 +367,7 @@ Create a new user account.
 </details>
 
 <details>
-<summary><span class="method-get">GET</span> /game/drafting-peloton - Get Drafting Peloton</summary>
+<summary><img src="https://placehold.co/15x15/49cc90/49cc90.png" alt="GET"/> <b>GET</b> /game/drafting-peloton - Get Drafting Peloton</summary>
 
 **Base URL:** Main API
 
@@ -485,7 +478,7 @@ Create a new user account.
 </details>
 
 <details>
-<summary><span class="method-get">GET</span> /game/world-route-player-count - Get World Route Player Count</summary>
+<summary><img src="https://placehold.co/15x15/49cc90/49cc90.png" alt="GET"/> <b>GET</b> /game/world-route-player-count - Get World Route Player Count</summary>
 
 **Base URL:** Main API
 
@@ -614,7 +607,7 @@ Create a new user account.
 </details>
 
 <details>
-<summary><span class="method-get">GET</span> /http-service/v1/game/environment-by-app-version - Get Environment by App Version</summary>
+<summary><img src="https://placehold.co/15x15/49cc90/49cc90.png" alt="GET"/> <b>GET</b> /http-service/v1/game/environment-by-app-version - Get Environment by App Version</summary>
 
 **Base URL:** Public API
 
@@ -642,7 +635,7 @@ GET /http-service/v1/game/environment-by-app-version?appVersion=5.5.0&platform=A
 ## Player
 
 <details>
-<summary><span class="method-post">POST</span> /player/player-data - Get Player Data</summary>
+<summary><img src="https://placehold.co/15x15/fca130/fca130.png" alt="POST"/> <b>POST</b> /player/player-data - Get Player Data</summary>
 
 **Base URL:** Main API
 
@@ -798,7 +791,7 @@ GET /http-service/v1/game/environment-by-app-version?appVersion=5.5.0&platform=A
 </details>
 
 <details>
-<summary><span class="method-get">GET</span> /player/my-friends - Get My Friends</summary>
+<summary><img src="https://placehold.co/15x15/49cc90/49cc90.png" alt="GET"/> <b>GET</b> /player/my-friends - Get My Friends</summary>
 
 **Base URL:** Main API
 
@@ -815,7 +808,7 @@ GET /http-service/v1/game/environment-by-app-version?appVersion=5.5.0&platform=A
 </details>
 
 <details>
-<summary><span class="method-get">GET</span> /player/fitness-network - Get Fitness Network</summary>
+<summary><img src="https://placehold.co/15x15/49cc90/49cc90.png" alt="GET"/> <b>GET</b> /player/fitness-network - Get Fitness Network</summary>
 
 **Base URL:** Service 26
 
@@ -831,7 +824,7 @@ GET /http-service/v1/game/environment-by-app-version?appVersion=5.5.0&platform=A
 </details>
 
 <details>
-<summary><span class="method-get">GET</span> /player/player-distance - Get Player Distance</summary>
+<summary><img src="https://placehold.co/15x15/49cc90/49cc90.png" alt="GET"/> <b>GET</b> /player/player-distance - Get Player Distance</summary>
 
 **Base URL:** Main API
 
@@ -855,7 +848,7 @@ GET /player/player-distance?days=7
 </details>
 
 <details>
-<summary><span class="method-put">PUT</span> /player/player-data - Update Player Data</summary>
+<summary><img src="https://placehold.co/15x15/61affe/61affe.png" alt="PUT"/> <b>PUT</b> /player/player-data - Update Player Data</summary>
 
 **Base URL:** Main API
 
@@ -882,7 +875,7 @@ GET /player/player-distance?days=7
 ## Server
 
 <details>
-<summary><span class="method-get">GET</span> /server-time - Get Server Time</summary>
+<summary><img src="https://placehold.co/15x15/49cc90/49cc90.png" alt="GET"/> <b>GET</b> /server-time - Get Server Time</summary>
 
 **Base URL:** Main API
 
@@ -902,7 +895,7 @@ GET /player/player-distance?days=7
 ## Free Ride
 
 <details>
-<summary><span class="method-get">GET</span> /free-ride/routes - Get Routes</summary>
+<summary><img src="https://placehold.co/15x15/49cc90/49cc90.png" alt="GET"/> <b>GET</b> /free-ride/routes - Get Routes</summary>
 
 **Base URL:** Main API
 
@@ -993,7 +986,7 @@ GET /player/player-distance?days=7
 </details>
 
 <details>
-<summary><span class="method-get">GET</span> /free-ride/player-ghost-ride-data - Get Player Ghost Ride Data</summary>
+<summary><img src="https://placehold.co/15x15/49cc90/49cc90.png" alt="GET"/> <b>GET</b> /free-ride/player-ghost-ride-data - Get Player Ghost Ride Data</summary>
 
 **Base URL:** Main API
 
@@ -1021,7 +1014,7 @@ GET /free-ride/player-ghost-ride-data?whooshPlayerId=your-whoosh-id
 ## Bots
 
 <details>
-<summary><span class="method-get">GET</span> /bots/free-ride/pacer-bot - Get Pacer Bot</summary>
+<summary><img src="https://placehold.co/15x15/49cc90/49cc90.png" alt="GET"/> <b>GET</b> /bots/free-ride/pacer-bot - Get Pacer Bot</summary>
 
 **Base URL:** Main API
 
@@ -1123,7 +1116,7 @@ GET /free-ride/player-ghost-ride-data?whooshPlayerId=your-whoosh-id
 ## Economy
 
 <details>
-<summary><span class="method-get">GET</span> /economy/bundle/info - Get Bundle Info</summary>
+<summary><img src="https://placehold.co/15x15/49cc90/49cc90.png" alt="GET"/> <b>GET</b> /economy/bundle/info - Get Bundle Info</summary>
 
 **Base URL:** Main API
 
@@ -1204,7 +1197,7 @@ GET /free-ride/player-ghost-ride-data?whooshPlayerId=your-whoosh-id
 </details>
 
 <details>
-<summary><span class="method-get">GET</span> /economy/garage/item - Get Garage Items</summary>
+<summary><img src="https://placehold.co/15x15/49cc90/49cc90.png" alt="GET"/> <b>GET</b> /economy/garage/item - Get Garage Items</summary>
 
 **Base URL:** Main API
 
@@ -1252,7 +1245,7 @@ GET /free-ride/player-ghost-ride-data?whooshPlayerId=your-whoosh-id
 </details>
 
 <details>
-<summary><span class="method-get">GET</span> /economy/calculations - Get Calculations</summary>
+<summary><img src="https://placehold.co/15x15/49cc90/49cc90.png" alt="GET"/> <b>GET</b> /economy/calculations - Get Calculations</summary>
 
 **Base URL:** Main API
 
@@ -1350,7 +1343,7 @@ GET /economy/calculations?CurrentLevel=1
 ## Config
 
 <details>
-<summary><span class="method-get">GET</span> /config/age-config - Get Age Config</summary>
+<summary><img src="https://placehold.co/15x15/49cc90/49cc90.png" alt="GET"/> <b>GET</b> /config/age-config - Get Age Config</summary>
 
 **Base URL:** Main API
 
@@ -1378,7 +1371,7 @@ GET /economy/calculations?CurrentLevel=1
 </details>
 
 <details>
-<summary><span class="method-get">GET</span> /http-service/v1/config/age-config-data - Get Age Config Data</summary>
+<summary><img src="https://placehold.co/15x15/49cc90/49cc90.png" alt="GET"/> <b>GET</b> /http-service/v1/config/age-config-data - Get Age Config Data</summary>
 
 **Base URL:** Main API
 
@@ -1394,7 +1387,7 @@ GET /economy/calculations?CurrentLevel=1
 ## Connectapp Host
 
 <details>
-<summary><span class="method-get">GET</span> /connectapp-host/{whooshId} - Get Connectapp Host Info</summary>
+<summary><img src="https://placehold.co/15x15/49cc90/49cc90.png" alt="GET"/> <b>GET</b> /connectapp-host/{whooshId} - Get Connectapp Host Info</summary>
 
 **Base URL:** Main API
 
@@ -1410,7 +1403,7 @@ GET /economy/calculations?CurrentLevel=1
 ## Client
 
 <details>
-<summary><span class="method-get">GET</span> /client/custom-workout-upload/{whooshId} - Get Custom Workout Upload</summary>
+<summary><img src="https://placehold.co/15x15/49cc90/49cc90.png" alt="GET"/> <b>GET</b> /client/custom-workout-upload/{whooshId} - Get Custom Workout Upload</summary>
 
 **Base URL:** Coaching API
 
@@ -1437,7 +1430,7 @@ GET /economy/calculations?CurrentLevel=1
 </details>
 
 <details>
-<summary><span class="method-post">POST</span> /client/custom-workout-upload - Upload Custom Workout</summary>
+<summary><img src="https://placehold.co/15x15/fca130/fca130.png" alt="POST"/> <b>POST</b> /client/custom-workout-upload - Upload Custom Workout</summary>
 
 **Base URL:** Coaching API
 
@@ -1585,7 +1578,7 @@ GET /economy/calculations?CurrentLevel=1
 </details>
 
 <details>
-<summary><span class="method-get">GET</span> /client/coach - Get Coach</summary>
+<summary><img src="https://placehold.co/15x15/49cc90/49cc90.png" alt="GET"/> <b>GET</b> /client/coach - Get Coach</summary>
 
 **Base URL:** Coaching API
 
@@ -1638,7 +1631,7 @@ GET /economy/calculations?CurrentLevel=1
 </details>
 
 <details>
-<summary><span class="method-get">GET</span> /client/vod - Get VOD</summary>
+<summary><img src="https://placehold.co/15x15/49cc90/49cc90.png" alt="GET"/> <b>GET</b> /client/vod - Get VOD</summary>
 
 **Base URL:** Coaching API
 
@@ -1715,7 +1708,7 @@ GET /economy/calculations?CurrentLevel=1
 ## Mobile
 
 <details>
-<summary><span class="method-post">POST</span> /mobile/workout/download - Download Calendar Workouts</summary>
+<summary><img src="https://placehold.co/15x15/fca130/fca130.png" alt="POST"/> <b>POST</b> /mobile/workout/download - Download Calendar Workouts</summary>
 
 **Base URL:** Service 20
 
@@ -1742,7 +1735,7 @@ POST /mobile/workout/download?player_id=your-whoosh-id&type=calendar
 </details>
 
 <details>
-<summary><span class="method-post">POST</span> /mobile/workout/download - Download Favorite Workouts</summary>
+<summary><img src="https://placehold.co/15x15/fca130/fca130.png" alt="POST"/> <b>POST</b> /mobile/workout/download - Download Favorite Workouts</summary>
 
 **Base URL:** Service 20
 
@@ -1792,7 +1785,7 @@ POST /mobile/workout/download?player_id=your-whoosh-id&type=favorite
 ## Achievements & Trophies
 
 <details>
-<summary><span class="method-get">GET</span> /achievement-trophies/player-achievement - Get Player Achievements</summary>
+<summary><img src="https://placehold.co/15x15/49cc90/49cc90.png" alt="GET"/> <b>GET</b> /achievement-trophies/player-achievement - Get Player Achievements</summary>
 
 **Base URL:** Main API
 
@@ -1866,7 +1859,7 @@ POST /mobile/workout/download?player_id=your-whoosh-id&type=favorite
 </details>
 
 <details>
-<summary><span class="method-get">GET</span> /achievement-trophies/player-trophies-jerseys - Get Player Trophies and Jerseys</summary>
+<summary><img src="https://placehold.co/15x15/49cc90/49cc90.png" alt="GET"/> <b>GET</b> /achievement-trophies/player-trophies-jerseys - Get Player Trophies and Jerseys</summary>
 
 **Base URL:** Main API
 
@@ -1892,7 +1885,7 @@ POST /mobile/workout/download?player_id=your-whoosh-id&type=favorite
 ## Season Pass
 
 <details>
-<summary><span class="method-get">GET</span> /season-pass/progress - Get Season Pass Progress</summary>
+<summary><img src="https://placehold.co/15x15/49cc90/49cc90.png" alt="GET"/> <b>GET</b> /season-pass/progress - Get Season Pass Progress</summary>
 
 **Base URL:** Main API
 
@@ -1914,7 +1907,7 @@ GET /season-pass/progress?userId=your-whoosh-id&seasonId=season-uuid
 ## Mission Challenge
 
 <details>
-<summary><span class="method-get">GET</span> /mission-challenge/mission - Get Missions</summary>
+<summary><img src="https://placehold.co/15x15/49cc90/49cc90.png" alt="GET"/> <b>GET</b> /mission-challenge/mission - Get Missions</summary>
 
 **Base URL:** Main API
 
@@ -2000,7 +1993,7 @@ GET /season-pass/progress?userId=your-whoosh-id&seasonId=season-uuid
 </details>
 
 <details>
-<summary><span class="method-get">GET</span> /mission-challenge/progress - Get Mission Progress</summary>
+<summary><img src="https://placehold.co/15x15/49cc90/49cc90.png" alt="GET"/> <b>GET</b> /mission-challenge/progress - Get Mission Progress</summary>
 
 **Base URL:** Main API
 
@@ -2013,7 +2006,7 @@ GET /season-pass/progress?userId=your-whoosh-id&seasonId=season-uuid
 ## Events
 
 <details>
-<summary><span class="method-get">GET</span> /events - Get Events</summary>
+<summary><img src="https://placehold.co/15x15/49cc90/49cc90.png" alt="GET"/> <b>GET</b> /events - Get Events</summary>
 
 **Base URL:** Service 26
 
@@ -2123,7 +2116,7 @@ GET /events?zone-offset=KzAxOjAwOjAwLjAwMA==&date=-1&SportsMode=E_Cycling&platfo
 ## Group Workout
 
 <details>
-<summary><span class="method-get">GET</span> /group-workout - Get Group Workouts</summary>
+<summary><img src="https://placehold.co/15x15/49cc90/49cc90.png" alt="GET"/> <b>GET</b> /group-workout - Get Group Workouts</summary>
 
 **Base URL:** Service 26
 
@@ -2231,7 +2224,7 @@ GET /events?zone-offset=KzAxOjAwOjAwLjAwMA==&date=-1&SportsMode=E_Cycling&platfo
 ## Data Recovery
 
 <details>
-<summary><span class="method-get">GET</span> /data-recovery/pending-ride - Get Pending Ride</summary>
+<summary><img src="https://placehold.co/15x15/49cc90/49cc90.png" alt="GET"/> <b>GET</b> /data-recovery/pending-ride - Get Pending Ride</summary>
 
 **Base URL:** Data Recovery
 
@@ -2244,7 +2237,7 @@ GET /events?zone-offset=KzAxOjAwOjAwLjAwMA==&date=-1&SportsMode=E_Cycling&platfo
 ## Task (Calendar)
 
 <details>
-<summary><span class="method-post">POST</span> /task/create - Create Task</summary>
+<summary><img src="https://placehold.co/15x15/fca130/fca130.png" alt="POST"/> <b>POST</b> /task/create - Create Task</summary>
 
 **Base URL:** Service 14
 
@@ -2274,7 +2267,7 @@ GET /events?zone-offset=KzAxOjAwOjAwLjAwMA==&date=-1&SportsMode=E_Cycling&platfo
 </details>
 
 <details>
-<summary><span class="method-delete">DELETE</span> /task/{taskId} - Delete Task</summary>
+<summary><img src="https://placehold.co/15x15/f93e3e/f93e3e.png" alt="DELETE"/> <b>DELETE</b> /task/{taskId} - Delete Task</summary>
 
 **Base URL:** Service 14
 
@@ -2299,7 +2292,7 @@ GET /events?zone-offset=KzAxOjAwOjAwLjAwMA==&date=-1&SportsMode=E_Cycling&platfo
 </details>
 
 <details>
-<summary><span class="method-get">GET</span> /task/date-range-task-list - Get Date Range Task List</summary>
+<summary><img src="https://placehold.co/15x15/49cc90/49cc90.png" alt="GET"/> <b>GET</b> /task/date-range-task-list - Get Date Range Task List</summary>
 
 **Base URL:** Service 14
 
@@ -2336,7 +2329,7 @@ GET /task/date-range-task-list?startDate=1748217600&endDate=1748822399
 ## Leaderboard
 
 <details>
-<summary><span class="method-get">GET</span> /leaderboard-service/arcade/player/all - Get All Player Leaderboards</summary>
+<summary><img src="https://placehold.co/15x15/49cc90/49cc90.png" alt="GET"/> <b>GET</b> /leaderboard-service/arcade/player/all - Get All Player Leaderboards</summary>
 
 **Base URL:** Public API (Short)
 
@@ -2354,7 +2347,7 @@ GET /task/date-range-task-list?startDate=1748217600&endDate=1748822399
 </details>
 
 <details>
-<summary><span class="method-get">GET</span> /leaderboard-service/arcade - Get Arcade Leaderboard</summary>
+<summary><img src="https://placehold.co/15x15/49cc90/49cc90.png" alt="GET"/> <b>GET</b> /leaderboard-service/arcade - Get Arcade Leaderboard</summary>
 
 **Base URL:** Public API (Short)
 
@@ -2415,7 +2408,7 @@ GET /task/date-range-task-list?startDate=1748217600&endDate=1748822399
 ## Coupon
 
 <details>
-<summary><span class="method-post">POST</span> /coupon/redeem - Redeem Coupon</summary>
+<summary><img src="https://placehold.co/15x15/fca130/fca130.png" alt="POST"/> <b>POST</b> /coupon/redeem - Redeem Coupon</summary>
 
 **Base URL:** Main API
 
@@ -2452,7 +2445,7 @@ GET /task/date-range-task-list?startDate=1748217600&endDate=1748822399
 ## Maintenance
 
 <details>
-<summary><span class="method-get">GET</span> /v1/maintenance - Get Maintenance Status</summary>
+<summary><img src="https://placehold.co/15x15/49cc90/49cc90.png" alt="GET"/> <b>GET</b> /v1/maintenance - Get Maintenance Status</summary>
 
 **Base URL:** Public API
 
@@ -2487,7 +2480,7 @@ GET /task/date-range-task-list?startDate=1748217600&endDate=1748822399
 ## S3 / Assets
 
 <details>
-<summary><span class="method-get">GET</span> {workoutZipUrl} - Get Workout ZIP</summary>
+<summary><img src="https://placehold.co/15x15/49cc90/49cc90.png" alt="GET"/> <b>GET</b> {workoutZipUrl} - Get Workout ZIP</summary>
 
 **Base URL:** Dynamic (S3 URL)
 
@@ -2539,3 +2532,5 @@ All endpoints may return standard HTTP error codes:
 - Base64 encoded values (like zone-offset) should be properly encoded
 - The `WhooshId` is your unique player identifier obtained during login
 - Store the `AccessToken` securely and refresh when expired
+
+
