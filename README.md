@@ -1,9 +1,9 @@
 # MyWhoosh-API
 
 
-[![GitHub stars](https://img.shields.io/github/stars/mywhoosh-community/mywhoosh-apid)](https://github.com/mywhoosh-community/mywhoosh-api/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/mywhoosh-community/mywhoosh-apid)](https://github.com/mywhoosh-community/mywhoosh-api/network/members)
-[![License](https://img.shields.io/github/license/mywhoosh-community/mywhoosh-apid)](LICENSE)
+[![GitHub stars](https://img.shields.io/github/stars/mywhoosh-community/mywhoosh-api)](https://github.com/mywhoosh-community/mywhoosh-api/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/mywhoosh-community/mywhoosh-api)](https://github.com/mywhoosh-community/mywhoosh-api/network/members)
+[![License](https://img.shields.io/github/license/mywhoosh-community/mywhoosh-api)](LICENSE)
 [![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/mywhoosh-community/mywhoosh-api)
 
 ![MyWhoosh Logo](./docs/assets/mywhoosh-logo.png)
