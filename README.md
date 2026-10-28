@@ -75,6 +75,30 @@ Authenticate a user and receive access tokens.
 </details>
 
 <details>
+<summary><img src="https://placehold.co/15x15/49cc90/49cc90.png" alt="GET"/> <b>GET</b> /http-service/api/tokens/generate - Refresh Tokens</summary>
+
+Get a new access token and refresh token without the password. This is the call the app makes.
+
+**Base URL:** Public API
+
+**Authentication:** `Authorization: Bearer YOUR_REFRESH_TOKEN` (the refresh token, not the access token)
+
+**Response:**
+```json
+{
+    "AccessToken": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9...",
+    "RefreshToken": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9..."
+    // ... more fields
+}
+```
+
+*Notes:*
+- Both tokens are JWTs; their `exp` claim gives the expiry. Observed lifetimes: about 15 days for the access token and about 60 days for the refresh token.
+- The old refresh token keeps working after a refresh.
+
+</details>
+
+<details>
 <summary><img src="https://placehold.co/15x15/fca130/fca130.png" alt="POST"/> <b>POST</b> /http-service/v1/player/register-user - Register</summary>
 
 Create a new user account.
@@ -172,6 +196,8 @@ Create a new user account.
     "MyWhooshAchievementsIconsZipUrl": "https://prod-cdn-assets.mywhoosh.com/images/...",
     "MyWhooshWordlsURL": "https://prod-cdn-assets.mywhoosh.com/images/...",
     "MyWhooshWorkoutsZipURL": "https://prod-cdn-assets.mywhoosh.com/images/...",
+    "MyWhooshWorkoutsZipURLRunning": "https://prod-cdn-assets.mywhoosh.com/images/...",
+    "MyWhooshWorkoutsZipURLRowing": "https://prod-cdn-assets.mywhoosh.com/images/...",
     "MyWhooshTrainingPlansZipURL": "https://prod-cdn-assets.mywhoosh.com/images/...",
     "Worlds": [
         {
@@ -243,6 +269,9 @@ Create a new user account.
 
 **Authentication:** Required
 
+**Query Parameters:**
+- `sportType` (string): `Cycling`, `Running` or `Rowing` (see [Sports](#sports))
+
 **Response:**
 ```json
 {
@@ -258,6 +287,9 @@ Create a new user account.
 **Base URL:** Main API
 
 **Authentication:** Required
+
+**Query Parameters:**
+- `sportType` (string): `Cycling`, `Running` or `Rowing` (see [Sports](#sports))
 
 **Response:**
 ```json
@@ -298,6 +330,9 @@ Create a new user account.
 **Base URL:** Main API
 
 **Authentication:** Required
+
+**Query Parameters:**
+- `sportType` (string): `Cycling`, `Running` or `Rowing` (see [Sports](#sports))
 
 **Response:**
 ```json
@@ -995,6 +1030,7 @@ GET /player/player-distance?days=7
 
 **Query Parameters:**
 - `whooshPlayerId` (string, required): Player's Whoosh ID
+- `sportType` (string): `Cycling`, `Running` or `Rowing` (see [Sports](#sports))
 
 **Example:**
 ```
@@ -1123,6 +1159,9 @@ GET /free-ride/player-ghost-ride-data?whooshPlayerId=your-whoosh-id
 
 **Authentication:** Required
 
+**Query Parameters:**
+- `sportType` (string): `Cycling`, `Running` or `Rowing` (see [Sports](#sports))
+
 **Response:**
 ```json
 {
@@ -1204,6 +1243,9 @@ GET /free-ride/player-ghost-ride-data?whooshPlayerId=your-whoosh-id
 
 **Authentication:** Required
 
+**Query Parameters:**
+- `sportType` (string): `Cycling`, `Running` or `Rowing` (see [Sports](#sports))
+
 **Response:**
 ```json
 {
@@ -1254,10 +1296,11 @@ GET /free-ride/player-ghost-ride-data?whooshPlayerId=your-whoosh-id
 
 **Query Parameters:**
 - `CurrentLevel` (integer): Player's current level
+- `sportType` (string): `Cycling`, `Running` or `Rowing` (see [Sports](#sports))
 
 **Example:**
 ```
-GET /economy/calculations?CurrentLevel=1
+GET /economy/calculations?CurrentLevel=1&sportType=Cycling
 ```
 
 **Response:**
@@ -1404,16 +1447,18 @@ GET /economy/calculations?CurrentLevel=1
 ## Client
 
 <details>
-<summary><img src="https://placehold.co/15x15/49cc90/49cc90.png" alt="GET"/> <b>GET</b> /client/custom-workout-upload/{whooshId} - Get Custom Workout Upload</summary>
+<summary><img src="https://placehold.co/15x15/49cc90/49cc90.png" alt="GET"/> <b>GET</b> /client/custom-workout-upload/{sportsModeType} - Get Custom Workout Upload</summary>
 
 **Base URL:** Coaching API
 
 **Authentication:** Required
 
 **Path Parameters:**
-- `whooshId` (string): User's Whoosh ID
+- `sportsModeType` (integer): `0` cycling, `1` running, `3` rowing (see [Sports](#sports)). Custom workouts are stored per sport. The player comes from the access token.
 
-**Description:** Returns the S3 URL to download custom workouts. Use this URL in the POST request to upload custom workouts.
+**Description:** Returns the S3 URL of a ZIP with the player's custom workouts for that sport.
+
+*Note: with the WhooshId in this path segment (as documented before), custom workouts show up as "NaN" (see [mywhoosh-mcp-server#1](https://github.com/mywhoosh-community/mywhoosh-mcp-server/issues/1)).*
 
 **Response:**
 ```json
@@ -1440,7 +1485,7 @@ GET /economy/calculations?CurrentLevel=1
 **Request Body:**
 ```json
 {
-    "UserId": "your-whoosh-id",
+    "SportsModeType": 0,
     "WorkoutsData": [
         {
             "Id": "[random-unique-id]",
@@ -1566,7 +1611,10 @@ GET /economy/calculations?CurrentLevel=1
 }
 ```
 
-**Important:** The workout `Id` must be unique.
+**Important:**
+- The workout `Id` must be unique. Uploading a workout with an existing `Id` replaces it.
+- `SportsModeType` selects the sport (`0` cycling, `1` running, `3` rowing). The app sends no `UserId`; the player comes from the access token.
+- `Mode` per sport: `E_Ride` (cycling), `E_Run` (running), `E_Row` (rowing).
 
 **Response:**
 ```json
@@ -1579,14 +1627,14 @@ GET /economy/calculations?CurrentLevel=1
 </details>
 
 <details>
-<summary><img src="https://placehold.co/15x15/f93e3e/f93e3e.png" alt="DELETE"/> <b>DELETE</b> /client/custom-workout-upload/{whooshId}/{workoutId} - Delete Custom Workout</summary>
+<summary><img src="https://placehold.co/15x15/f93e3e/f93e3e.png" alt="DELETE"/> <b>DELETE</b> /client/custom-workout-upload/{sportsModeType}/{workoutId} - Delete Custom Workout</summary>
 
 **Base URL:** Coaching API
 
 **Authentication:** Required
 
 **Path Parameters:**
-- `whooshId` (string): User's Whoosh ID
+- `sportsModeType` (integer): sport the workout was uploaded for: `0` cycling, `1` running, `3` rowing
 - `workoutId` (string): Workout ID to delete
 
 **Response:**
@@ -1815,6 +1863,7 @@ POST /mobile/workout/download?player_id=your-whoosh-id&type=favorite
 
 **Query Parameters:**
 - `UserId` (string): Player's Whoosh ID
+- `sportType` (string): `Cycling`, `Running` or `Rowing` (see [Sports](#sports))
 
 **Response:**
 ```json
@@ -1889,6 +1938,7 @@ POST /mobile/workout/download?player_id=your-whoosh-id&type=favorite
 
 **Query Parameters:**
 - `UserId` (string): Player's Whoosh ID
+- `sportType` (string): `Cycling`, `Running` or `Rowing` (see [Sports](#sports))
 
 **Response:**
 ```json
@@ -1934,6 +1984,9 @@ GET /season-pass/progress?userId=your-whoosh-id&seasonId=season-uuid
 **Base URL:** Main API
 
 **Authentication:** Required
+
+**Query Parameters:**
+- `sportType` (string): `Cycling`, `Running` or `Rowing` (see [Sports](#sports))
 
 **Response:**
 ```json
@@ -2021,6 +2074,9 @@ GET /season-pass/progress?userId=your-whoosh-id&seasonId=season-uuid
 
 **Authentication:** Required
 
+**Query Parameters:**
+- `sportType` (string): `Cycling`, `Running` or `Rowing` (see [Sports](#sports))
+
 </details>
 
 ---
@@ -2037,12 +2093,12 @@ GET /season-pass/progress?userId=your-whoosh-id&seasonId=season-uuid
 **Query Parameters:**
 - `zone-offset` (string): Base64 encoded timezone offset
 - `date` (integer): Date filter (-1 for all)
-- `SportsMode` (string): e.g., "E_Cycling"
+- `sportType` (string): `E_Cycling`, `E_Running` or `E_Rowing`. Note the `E_` prefix here, unlike the other endpoints. A `SportsMode` parameter is ignored: it returns the same events for every sport.
 - `platform` (string): e.g., "mobile"
 
 **Example:**
 ```
-GET /events?zone-offset=KzAxOjAwOjAwLjAwMA==&date=-1&SportsMode=E_Cycling&platform=mobile
+GET /events?zone-offset=KzAxOjAwOjAwLjAwMA==&date=-1&sportType=E_Cycling&platform=mobile
 ```
 
 **Response:**
@@ -2147,6 +2203,7 @@ GET /events?zone-offset=KzAxOjAwOjAwLjAwMA==&date=-1&SportsMode=E_Cycling&platfo
 **Query Parameters:**
 - `zone-offset` (string): Base64 encoded timezone offset
 - `platform` (string): e.g., "mobile"
+- `sportType` (string): `Cycling`, `Running` or `Rowing` (see [Sports](#sports))
 
 **Response:**
 ```json
@@ -2529,7 +2586,7 @@ GET /task/date-range-task-list?startDate=1748217600&endDate=1748822399
 
 **Authentication:** Not required (pre-signed URL)
 
-**Description:** Downloads a ZIP file containing custom workouts as JSON files. The URL is obtained from GET /client/custom-workout-upload/{whooshId}.
+**Description:** Downloads a ZIP file containing custom workouts as JSON files. The URL is obtained from GET /client/custom-workout-upload/{sportsModeType}.
 
 **Response:** Binary data (application/zip)
 
@@ -2542,6 +2599,20 @@ The ZIP file contains workout JSON files with the following structure:
 ![S3 ZIP Contents](docs/assets/S3-Amazon-ZIP-Screenshot.png)
 
 </details>
+
+---
+
+## Sports
+
+MyWhoosh offers cycling, running and rowing. Endpoints name the sport in different ways:
+
+| Sport | `sportType` (game, economy, achievements, missions, group workouts) | `sportType` (`/events`) | `SportsModeType` (custom workouts) | Custom workout `Mode` |
+|---|---|---|---|---|
+| Cycling | `Cycling` | `E_Cycling` | `0` | `E_Ride` |
+| Running | `Running` | `E_Running` | `1` | `E_Run` |
+| Rowing | `Rowing` | `E_Rowing` | `3` | `E_Row` |
+
+The values were taken from the requests of the MyWhoosh desktop app (macOS).
 
 ---
 
@@ -2574,6 +2645,6 @@ All endpoints may return standard HTTP error codes:
 - UUIDs are in standard format: `xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx`
 - Base64 encoded values (like zone-offset) should be properly encoded
 - The `WhooshId` is your unique player identifier obtained during login
-- Store the `AccessToken` securely and refresh when expired
+- Store the `AccessToken` securely and refresh it before it expires (see [Refresh Tokens](#authentication-endpoints))
 
 
